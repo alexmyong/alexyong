@@ -1,0 +1,9 @@
+# Add to ~/.ssh/config on the Mac. "rpi" resolves through Tailscale MagicDNS.
+# Key made with: ssh-keygen -t ed25519 -f ~/.ssh/id_rpi
+# Installed with: ssh-copy-id -i ~/.ssh/id_rpi.pub rpi
+Host rpi
+  HostName rpi
+  User alex
+  IdentityFile ~/.ssh/id_rpi
+  IdentitiesOnly yes
+  GSSAPIAuthentication no

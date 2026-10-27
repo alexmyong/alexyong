@@ -1,0 +1,20 @@
+[Unit]
+Description=Anki sync server
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+User=alex
+Group=alex
+EnvironmentFile=/etc/anki-syncserver.env
+ExecStart=/home/alex/syncserver/bin/python -m anki.syncserver
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/alex/.syncserver
+
+[Install]
+WantedBy=multi-user.target
