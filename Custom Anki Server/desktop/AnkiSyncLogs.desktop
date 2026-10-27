@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Anki Sync Logs
+Comment=Live log of the Anki sync server
+Exec=lxterminal --title="Anki Sync Logs" -e "journalctl -u anki-syncserver -n 50 -f -o cat"
+Icon=/home/alex/Pictures/Anki.png
+Terminal=false
+Categories=Utility;
